@@ -38,7 +38,12 @@ export const ItemList = ({
           borderRadius="15px"
           width="80px"
         >
-          <Image src={item.path.src} width="35px" height="35px" />
+          <Image
+            objectFit="contain"
+            src={item.path.src}
+            width="35px"
+            height="35px"
+          />
 
           <Text textTransform="uppercase" mt="5px" fontSize="11px">
             {item.name}

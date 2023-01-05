@@ -6,7 +6,6 @@ export const About = (props: FlexProps) => {
   const a = moment("Feb 01 2022");
   const b = moment();
   const no_of_days = b.diff(a, "days");
-  console.log(no_of_days, "no_of_days");
   return (
     <Box id="about">
       <WhiteBlock description="SOME INFO" header="SOME INFO">
@@ -58,7 +57,7 @@ export const About = (props: FlexProps) => {
           fontWeight="bold"
         >
           It has been exactly {no_of_days.toString()} days since I'm full-time
-          react developer!
+          React developer!
         </Text>
       </WhiteBlock>
     </Box>

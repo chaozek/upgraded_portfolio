@@ -9,6 +9,8 @@ import redux from "../../public/skills/job/redux.svg";
 import reduxObservable from "../../public/skills/job/redux-observable.svg";
 import sass from "../../public/skills/job/sass.svg";
 import styledComponents from "../../public/skills/job/styled-components.svg";
+import cypress from "../../public/skills/job/cypress.png";
+import backstop from "../../public/skills/job/backstop.png";
 
 import api from "../../public/skills/personal/api.svg";
 import docker from "../../public/skills/personal/docker.svg";
@@ -21,6 +23,14 @@ import reduxToolkit from "../../public/skills/personal/redux-toolkit.svg";
 import Typescript from "../../public/skills/personal/Typescript.svg";
 
 const profiSkills = [
+  {
+    name: "cypress",
+    path: cypress,
+  },
+  {
+    name: "backstop",
+    path: backstop,
+  },
   {
     name: "react",
     path: react,

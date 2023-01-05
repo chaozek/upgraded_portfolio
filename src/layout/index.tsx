@@ -1,8 +1,8 @@
-import { Box, Flex, Heading, IconButton } from "@chakra-ui/react";
+import { Box, Flex, IconButton } from "@chakra-ui/react";
 import { Sidebar } from "../components/Sidebar";
-import { Container } from "../components/Container";
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
+import { DarkModeSwitch } from "../components/DarkModeSwitch";
 
 export const Layout = ({ children }: { children: JSX.Element }) => {
   const [navSize, changeNavSize] = useState("small");
@@ -11,6 +11,7 @@ export const Layout = ({ children }: { children: JSX.Element }) => {
   return (
     <div className="wrapper">
       <Box>
+        <DarkModeSwitch />
         <Sidebar
           showMobileMenu={showMobileMenu}
           changeShowMobileMenu={changeShowMobileMenu}
