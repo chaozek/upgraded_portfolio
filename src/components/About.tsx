@@ -13,7 +13,7 @@ export const About = () => {
         <>
           <Text>
             I'm self taught web developer from{" "}
-            <strong>Czech Republic, Brno</strong>
+            <strong>Czech Republic, Brno</strong>.
             <br />
             It has all began back in 2018 when I was working as marketing
             manager. I couldn't find any reliable website developer so I've
