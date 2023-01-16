@@ -22,7 +22,7 @@ import prisma from "../../public/skills/personal/prisma.svg";
 import reduxToolkit from "../../public/skills/personal/redux-toolkit.svg";
 import Typescript from "../../public/skills/personal/Typescript.svg";
 
-const profiSkills = [
+const profiSkills: { name: string; path: HTMLImageElement }[] = [
   {
     name: "cypress",
     path: cypress,
@@ -77,7 +77,7 @@ const profiSkills = [
     path: styledComponents,
   },
 ];
-const personalSkills = [
+const personalSkills: { name: string; path: HTMLImageElement }[] = [
   {
     name: "api",
     path: api,

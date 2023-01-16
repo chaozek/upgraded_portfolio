@@ -5,16 +5,14 @@ import {
   IconButton,
   Image,
   Text,
-  Icon,
   List,
   ListItem,
-  useColorMode,
 } from "@chakra-ui/react";
 import me from "../../public/me.jpg";
 import { Button } from "./CustomButton";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 
-export const Hero = ({ title }: { title: string }) => {
+export const Hero = () => {
   return (
     <Flex
       id="home"

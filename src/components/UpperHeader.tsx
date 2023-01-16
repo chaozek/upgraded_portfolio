@@ -1,12 +1,9 @@
-import { Flex, FlexProps, Text, Box } from "@chakra-ui/react";
-
-export const UpperHeader = ({
-  header,
-  description,
-}: {
-  header: string;
+import { Text, Box } from "@chakra-ui/react";
+interface Props {
   description: string;
-}) => (
+  header: string;
+}
+export const UpperHeader = ({ header, description }: Props) => (
   <Box position="relative" mb="50">
     {description && (
       <Text

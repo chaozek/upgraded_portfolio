@@ -1,20 +1,8 @@
-import {
-  Box,
-  Flex,
-  FlexProps,
-  Image,
-  List,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
-import { UpperHeader } from "./UpperHeader";
-import { WhiteBlock } from "./WhiteBlock";
-
-export const ItemList = ({
-  items,
-}: {
+import { Image, List, ListItem, Text } from "@chakra-ui/react";
+interface Props {
   items: { path: HTMLImageElement; name: string }[];
-}) => (
+}
+export const ItemList = ({ items }: Props) => (
   <List
     display="grid"
     gridTemplateColumns="repeat(auto-fill, minmax(80px, 1fr))"

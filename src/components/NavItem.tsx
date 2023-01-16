@@ -1,13 +1,13 @@
 import React from "react";
 import { Flex, Text, Icon, Link, Menu, MenuButton } from "@chakra-ui/react";
-
-export default function NavItem({
-  icon,
-  title,
-  description,
-  active,
-  navSize,
-}: any) {
+import { IconType } from "react-icons/lib";
+interface Props {
+  icon: IconType;
+  title: string;
+  active?: boolean;
+  navSize: string;
+}
+export default function NavItem({ icon, title, active, navSize }: Props) {
   return (
     <Flex
       mt={30}

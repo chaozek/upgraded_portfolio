@@ -19,12 +19,19 @@ import {
 import { IoPawOutline, IoClose } from "react-icons/io5";
 import NavItem from "../components/NavItem";
 import { Container } from "./Container";
+
+interface Props {
+  navSize: string;
+  changeNavSize: (size: string) => void;
+  changeShowMobileMenu: (show: boolean) => void;
+  showMobileMenu: boolean;
+}
 export const Sidebar = ({
   navSize,
   changeNavSize,
   changeShowMobileMenu,
   showMobileMenu,
-}) => {
+}: Props) => {
   return (
     <Flex
       pos="fixed"
@@ -71,12 +78,7 @@ export const Sidebar = ({
           as="nav"
           mt="30px"
         >
-          <NavItem
-            navSize={navSize}
-            icon={FiHome}
-            title="home"
-            description="This is the description for the dashboard."
-          />
+          <NavItem navSize={navSize} icon={FiHome} title="home" />
           <NavItem navSize={navSize} icon={FiCalendar} title="about" />
           <NavItem navSize={navSize} icon={FiUser} title="Skills" />
           <NavItem navSize={navSize} icon={IoPawOutline} title="Works" />
