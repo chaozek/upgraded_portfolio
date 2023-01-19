@@ -9,10 +9,11 @@ export const ItemList = ({ items }: Props) => (
     gridColumnGap="50px"
     gridRowGap="50px"
   >
-    {items.map((item) => {
+    {items.map((item, key) => {
       return (
         <ListItem
           display="flex"
+          key={key}
           justifyContent="center"
           flexDirection="column"
           alignItems="center"

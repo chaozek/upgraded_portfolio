@@ -1,0 +1,7 @@
+//NECHCEME KOPÍROVAT VŠE, PROTOŽE NAPŘ NODE_MODULY SE NÁM VYBUILDÍ NA DOCKERU PŘÍMO
+node_modules
+.git
+.gitignore
+.dockerignore
+Dockerfile
+.env
