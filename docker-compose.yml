@@ -1,0 +1,19 @@
+version: "3"
+services:
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+  nginx: 
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+         - 80:80
+    volumes:
+      - ./src:/app/src
+    environment:
+      - NEXT_PUBLIC_TEST=dockercompose
+      - CHOKIDAR_USEPOLLING=true
+    #env_file:
+    #  - ./.env
