@@ -11,7 +11,8 @@ services:
     ports:
          - 80:80
     volumes:
-      - ./src:/app/src
+      - ./src:/usr/app/src
+      - /usr/app/node_modules
     environment:
       - NEXT_PUBLIC_TEST=dockercompose
       - CHOKIDAR_USEPOLLING=true
