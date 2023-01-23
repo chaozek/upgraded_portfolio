@@ -10,9 +10,18 @@ services:
       dockerfile: Dockerfile
     ports:
          - 80:80
+         - 443:443
     volumes:
       - ./src:/usr/app/src
-      - /usr/app/node_modules
+      - /usr/app/node_modules 
+      - ./nginx:/etc/nginx/conf.d
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes: 
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email pkaplan1@seznam.cz -d brnensky-vyvojar.cz --agree-tos
     environment:
       - NEXT_PUBLIC_TEST=dockercompose
       - CHOKIDAR_USEPOLLING=true
