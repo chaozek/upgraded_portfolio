@@ -15,6 +15,9 @@ services:
       - ./src:/usr/app/src
       - /usr/app/node_modules 
       - ./nginx:/etc/nginx/conf.d
+      - ./nginx/default.conf:/etc/nginx/nginx.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
   certbot:
     image: certbot/certbot
     container_name: certbot
