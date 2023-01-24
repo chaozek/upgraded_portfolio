@@ -21,7 +21,7 @@ services:
     volumes: 
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email pkaplan1@seznam.cz -d brnensky-vyvojar.cz --agree-tos
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email pkaplan1@seznam.cz -d brnensky-vyvojar.eu --agree-tos
     environment:
       - NEXT_PUBLIC_TEST=dockercompose
       - CHOKIDAR_USEPOLLING=true
