@@ -15,18 +15,16 @@ services:
       - ./src:/usr/app/src
       - /usr/app/node_modules 
       - ./nginx:/etc/nginx/conf.d
-      - ./nginx/default.conf:/etc/nginx/nginx.conf
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    volumes: 
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email pkaplan1@seznam.cz -d brnensky-vyvojar.eu --agree-tos
-    environment:
-      - NEXT_PUBLIC_TEST=dockercompose
-      - CHOKIDAR_USEPOLLING=true
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+ # certbot:
+ #   image: certbot/certbot
+ #   container_name: certbot
+ #   volumes: 
+#      - ./certbot/conf:/etc/letsencrypt
+ #     - ./certbot/www:/var/www/certbot
+ #   command: certonly --webroot -w /var/www/certbot --force-renewal --email pkaplan1@seznam.cz -d brnensky-vyvojar.eu --agree-tos
+ #   environment:
+ #     - NEXT_PUBLIC_TEST=dockercompose
+ #     - CHOKIDAR_USEPOLLING=true
     #env_file:
     #  - ./.env
