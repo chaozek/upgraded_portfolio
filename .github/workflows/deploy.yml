@@ -17,7 +17,13 @@ jobs:
     #      chmod 600 ~/.ssh/id_rsa
     #      ssh-keyscan "106.xx.xx.xx" >> ~/.ssh/known_hosts
       - name: deploy
-        run: |
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+         host: ${{ secrets.HOST }}
+         username: ${{ secrets.USERNAME }}
+         password: ${{ secrets.PASSWORD }}
+         port: ${{ secrets.PORT }}
+         script: |
           ssh root@139.144.79.82"
             cd /pka;
             git pull origin master;
