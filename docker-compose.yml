@@ -3,7 +3,7 @@ services:
   nextjs:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
   nginx: 
     build:
       context: ./nginx
