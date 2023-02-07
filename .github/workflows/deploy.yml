@@ -1,9 +1,30 @@
-name: Docker Compose Actions Workflow
-on: push
+name: deploy for master
+
+on:
+  push:
+    branches:
+      - master
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build the stack
-        run: docker-compose up -d
+      - name: Check out the repo
+    #  - name: set ssh key
+    #    run: |
+    #      mkdir -p ~/.ssh/
+    #      echo "${{secrets.COSEN_ID_RSA}}" > ~/.ssh/id_rsa
+    #      chmod 600 ~/.ssh/id_rsa
+    #      ssh-keyscan "106.xx.xx.xx" >> ~/.ssh/known_hosts
+      - name: deploy
+        run: |
+          ssh root@139.144.79.82"
+            cd /pka;
+            git pull origin master;
+
+            # 启动 docker
+            docker-compose build; 
+            docker-compose up -d;
+          "
+      #- name: delete ssh key
+      #  run: rm -rf ~/.ssh/id_rsa
