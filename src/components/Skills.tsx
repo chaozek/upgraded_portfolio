@@ -12,7 +12,7 @@ export const Skills = () => (
         fontSize="1xl"
         mb="5"
       >
-        Main focus (making a living from)
+        Main focus (making a living from) TEST
       </Text>
       <ItemList items={profiSkills} />
 
