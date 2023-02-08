@@ -23,10 +23,10 @@ jobs:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v0.1.7
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        host: www.brnensky-vyvojar.eu
+        username: root
         port: ${{ secrets.PORT }}
+        key: ${{ secrets.KEY }}
         script: |
           ssh root@139.144.79.82"
           cd /pka;
