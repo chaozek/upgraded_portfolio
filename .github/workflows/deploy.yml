@@ -30,7 +30,7 @@ jobs:
         script: |
           cd /pka;
           git pull origin main; 
-          docker-compose up build; 
+          docker-compose up --build; 
           docker-compose up -d;
       #- name: delete ssh key
       #  run: rm -rf ~/.ssh/id_rsa
