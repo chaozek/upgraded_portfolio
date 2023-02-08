@@ -27,6 +27,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
+        command_timeout: 200m
         script: |
           cd /pka;
           git pull origin main; 
