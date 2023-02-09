@@ -27,11 +27,10 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
-        command_timeout: 200m
+        command_timeout: 20m
         script: |
           cd /pka;
           git pull origin main; 
-          docker-compose up --build; 
-          docker-compose up -d;
+          docker-compose up --build -d; 
       #- name: delete ssh key
       #  run: rm -rf ~/.ssh/id_rsa

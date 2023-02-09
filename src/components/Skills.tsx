@@ -23,7 +23,7 @@ export const Skills = () => (
         fontSize="1xl"
         my="5"
       >
-        Working with in personal projects (FE & BE)
+        Working with in personal projects (FE & BE) TESTTESTTEST
       </Text>
       <ItemList items={personalSkills} />
     </>
