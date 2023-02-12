@@ -5,9 +5,15 @@ interface Props {
 export const ItemList = ({ items }: Props) => (
   <List
     display="grid"
-    gridTemplateColumns="repeat(auto-fill, minmax(80px, 1fr))"
+    gridTemplateColumns={[
+      ,
+      "repeat(auto-fill, minmax(30px, 1fr))",
+      "repeat(auto-fill, minmax(50px, 1fr))",
+      "repeat(auto-fill, minmax(50px, 1fr))",
+    ]}
     gridColumnGap="50px"
     gridRowGap="50px"
+    justifyItems="center"
   >
     {items.map((item, key) => {
       return (

@@ -32,6 +32,11 @@ export const Sidebar = ({
   changeShowMobileMenu,
   showMobileMenu,
 }: Props) => {
+  let closeOnMobileLinkClick = () => {
+    changeNavSize("large");
+    changeShowMobileMenu(!showMobileMenu);
+  };
+
   return (
     <Flex
       pos="fixed"
@@ -65,10 +70,7 @@ export const Sidebar = ({
           position="absolute"
           top="0"
           right="5px"
-          onClick={() => {
-            changeNavSize("large");
-            changeShowMobileMenu(!showMobileMenu);
-          }}
+          onClick={closeOnMobileLinkClick}
         />
         <Flex
           p="10px"
@@ -78,11 +80,36 @@ export const Sidebar = ({
           as="nav"
           mt="30px"
         >
-          <NavItem navSize={navSize} icon={FiHome} title="home" />
-          <NavItem navSize={navSize} icon={FiCalendar} title="about" />
-          <NavItem navSize={navSize} icon={FiUser} title="skills" />
-          <NavItem navSize={navSize} icon={IoPawOutline} title="projects" />
-          <NavItem navSize={navSize} icon={FiDollarSign} title="contact" />
+          <NavItem
+            onClick={closeOnMobileLinkClick}
+            navSize={navSize}
+            icon={FiHome}
+            title="home"
+          />
+          <NavItem
+            onClick={closeOnMobileLinkClick}
+            navSize={navSize}
+            icon={FiCalendar}
+            title="about"
+          />
+          <NavItem
+            onClick={closeOnMobileLinkClick}
+            navSize={navSize}
+            icon={FiUser}
+            title="skills"
+          />
+          <NavItem
+            onClick={closeOnMobileLinkClick}
+            navSize={navSize}
+            icon={IoPawOutline}
+            title="projects"
+          />
+          <NavItem
+            onClick={closeOnMobileLinkClick}
+            navSize={navSize}
+            icon={FiDollarSign}
+            title="contact"
+          />
         </Flex>
       </Container>
     </Flex>

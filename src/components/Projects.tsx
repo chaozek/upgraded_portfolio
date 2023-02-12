@@ -20,6 +20,11 @@ export const Projects = (props: FlexProps) => (
           alignItems="center"
           mt="10"
           flexWrap="wrap"
+          _dark={{
+            bg: "greenLightTheme",
+            color: "white",
+            borderRadius: "10px",
+          }}
         >
           <Image
             minWidth="150px"

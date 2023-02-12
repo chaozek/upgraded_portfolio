@@ -7,8 +7,15 @@ interface Props {
   title: string;
   active?: boolean;
   navSize: string;
+  onClick: () => void;
 }
-export default function NavItem({ icon, title, active, navSize }: Props) {
+export default function NavItem({
+  icon,
+  title,
+  active,
+  navSize,
+  ...rest
+}: Props) {
   return (
     <Flex
       mt={30}
@@ -28,6 +35,7 @@ export default function NavItem({ icon, title, active, navSize }: Props) {
           }}
           w={navSize == "large" && "100%"}
           href={"#" + title}
+          {...rest}
         >
           <Flex
             transition="all cubic-bezier(0, 0.52, 1, 1) .3s"
