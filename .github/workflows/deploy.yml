@@ -30,7 +30,8 @@ jobs:
         command_timeout: 20m
         script: |
           cd /pka;
-          git pull origin main; 
-          docker-compose up --build -d; 
+          git pull origin main;
+          docker-compose pull
+          docker-compose up -d; 
       #- name: delete ssh key
       #  run: rm -rf ~/.ssh/id_rsa

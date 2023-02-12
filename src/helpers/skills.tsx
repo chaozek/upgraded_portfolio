@@ -11,6 +11,7 @@ import sass from "../../public/skills/job/sass.svg";
 import styledComponents from "../../public/skills/job/styled-components.svg";
 import cypress from "../../public/skills/job/cypress.png";
 import backstop from "../../public/skills/job/backstop.png";
+import storybook from "../../public/skills/job/storybook.png";
 
 import api from "../../public/skills/personal/api.svg";
 import docker from "../../public/skills/personal/docker.svg";
@@ -75,6 +76,10 @@ const profiSkills: { name: string; path: HTMLImageElement }[] = [
   {
     name: "StyledComp.",
     path: styledComponents,
+  },
+  {
+    name: "Storybook",
+    path: storybook,
   },
 ];
 const personalSkills: { name: string; path: HTMLImageElement }[] = [
