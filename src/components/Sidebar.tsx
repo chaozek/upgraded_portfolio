@@ -1,22 +1,6 @@
-import { useState } from "react";
-import {
-  Flex,
-  Text,
-  IconButton,
-  Divider,
-  Avatar,
-  Heading,
-} from "@chakra-ui/react";
-import {
-  FiMenu,
-  FiHome,
-  FiCalendar,
-  FiUser,
-  FiDollarSign,
-  FiBriefcase,
-  FiSettings,
-} from "react-icons/fi";
-import { IoPawOutline, IoClose } from "react-icons/io5";
+import { Flex, IconButton } from "@chakra-ui/react";
+import { FiHome, FiUser, FiAward, FiStar, FiPhone } from "react-icons/fi";
+import { IoClose } from "react-icons/io5";
 import NavItem from "../components/NavItem";
 import { Container } from "./Container";
 
@@ -89,25 +73,25 @@ export const Sidebar = ({
           <NavItem
             onClick={closeOnMobileLinkClick}
             navSize={navSize}
-            icon={FiCalendar}
+            icon={FiUser}
             title="about"
           />
           <NavItem
             onClick={closeOnMobileLinkClick}
             navSize={navSize}
-            icon={FiUser}
+            icon={FiStar}
             title="skills"
           />
           <NavItem
             onClick={closeOnMobileLinkClick}
             navSize={navSize}
-            icon={IoPawOutline}
+            icon={FiAward}
             title="projects"
           />
           <NavItem
             onClick={closeOnMobileLinkClick}
             navSize={navSize}
-            icon={FiDollarSign}
+            icon={FiPhone}
             title="contact"
           />
         </Flex>

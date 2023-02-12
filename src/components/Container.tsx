@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 
-export const Container = (props: any) => (
+export const Container = (props) => (
   <Flex
     direction="column"
     alignItems="center"

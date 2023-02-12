@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Text, Icon, Link, Menu, MenuButton } from "@chakra-ui/react";
+import { Flex, Text, Icon, Link, Menu } from "@chakra-ui/react";
 import { IconType } from "react-icons/lib";
 import { capitalizeFirstLetter } from "../helpers/helpers";
 interface Props {

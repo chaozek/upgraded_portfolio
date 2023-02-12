@@ -1,4 +1,4 @@
-import { Box, FlexProps, Image, List, ListItem, Text } from "@chakra-ui/react";
+import { Box, FlexProps, Image, Text } from "@chakra-ui/react";
 import { WhiteBlock } from "./WhiteBlock";
 import Zonky from "../../public/companies/zonky-logo.svg";
 import AB from "../../public/companies/Air_Bank_logo.svg.png";
