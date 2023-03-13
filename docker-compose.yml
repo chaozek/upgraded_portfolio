@@ -15,6 +15,7 @@ services:
       - ./src:/usr/app/src
       - /usr/app/node_modules 
       - ./nginx:/etc/nginx/conf.d
+      - ./nginx:/var/www/html/html_test
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
