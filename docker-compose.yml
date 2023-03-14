@@ -32,9 +32,11 @@ services:
       #  - ./.env
   postgres:
     build:
-    context: ./postgres
-    dockerfile: Dockerfile
-  ports:
+      context: ./postgres
+      dockerfile: Dockerfile
+    ports:
     - '5432:5432'
-  volumes:
+    volumes:
     - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:
