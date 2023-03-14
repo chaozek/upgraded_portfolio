@@ -3,8 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
-
+.pnp.jsnode_modules
 # testing
 /coverage
 
@@ -34,3 +33,39 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+
+#______APP________
+
+
+# dependencies
+/app/node_modules
+/app/.pnp
+/app/.pnp.js
+/app/api/node_modules/
+/app/client/node_modules/
+# testing
+/app/coverage
+
+# next.js
+/app/.next/
+/app/out/
+/app/client/.next/
+# production
+/app/build
+/app/api/build
+/app/client/build
+# misc
+/app/.DS_Store
+
+# debug
+/app/npm-debug.log*
+/app/yarn-debug.log*
+/app/yarn-error.log*
+
+# local env files
+/app/.env.local
+/app/.env.development.local
+/app/.env.test.local
+/app/.env.production.local

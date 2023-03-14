@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Component {
+  id               Int             @id @default(autoincrement())
+  page             String?
+  name             String?         @unique @db.VarChar(255)
+  parentName       String?         @db.VarChar(255)
+  title            String?         @db.Text
+  texts            Text[]
+  show             Boolean         @default(true)
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  PageComponents   PageComponents? @relation(fields: [pageComponentsId], references: [id], onDelete: Cascade)
+  pageComponentsId Int?
+
+  @@map(name: "component")
+}
+
+model ComponentToRender {
+  id               Int             @id @default(autoincrement())
+  show             Boolean         @default(true)
+  component        String          @unique @db.VarChar(255)
+  pageName         String?
+  isUserCreated    Boolean         @default(false)
+  PageComponents   PageComponents? @relation(fields: [pageComponentsId], references: [id])
+  pageComponentsId Int?
+
+  @@map(name: "ComponentToRender")
+}
+
+model PageComponents {
+  id                 Int                 @id @default(autoincrement())
+  page               String?             @unique @db.VarChar(255)
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  componentsToRender ComponentToRender[]
+  components         Component[]
+  Text               Text[]
+
+  @@map(name: "pageComponents")
+}
+
+model Text {
+  id               Int             @id @default(autoincrement())
+  title            String          @db.VarChar(5000)
+  textOrder        String          @db.VarChar(255)
+  description      String?         @db.VarChar(600)
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  Component        Component?      @relation(fields: [componentId], references: [id], onDelete: Cascade)
+  componentId      Int?
+  PageComponents   PageComponents? @relation(fields: [pageComponentsId], references: [id])
+  pageComponentsId Int?
+
+  @@unique([textOrder, componentId])
+  @@map(name: "text")
+}
+
+model Image {
+  id          Int    @id @default(autoincrement())
+  image       String @db.Text
+  component   String @db.Text
+  specificLoc String @db.Text
+  path        String @db.Text
+
+  @@map(name: "images")
+}
