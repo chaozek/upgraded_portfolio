@@ -12,4 +12,4 @@ COPY pg_hba.conf /var/lib/postgresql/data
 EXPOSE 5432
 
 # Set the command to run when the container starts
-CMD ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
+CMD ["postgres", "-c", "config_file=/var/lib/postgresql/data/postgresql.conf"]
