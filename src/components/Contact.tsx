@@ -8,7 +8,7 @@ export const Contact = () => (
           as="a"
           href="mailto:pkaplan1@seznam.cz"
           textTransform="uppercase"
-          fontSize="2xl"
+          fontSize="xl"
           textAlign={"center"}
           fontWeight="bold"
         >
