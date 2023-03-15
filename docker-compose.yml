@@ -40,3 +40,9 @@ services:
     - postgres:/var/lib/postgresql/data
 volumes:
   postgres:
+  api:
+    build:
+      context: ./app/api/
+      dockerfile: Dockerfile.prod
+    ports:
+    - '9091:9091'
