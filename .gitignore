@@ -40,7 +40,6 @@ next-env.d.ts
 
 
 # dependencies
-/app/
 /app/node_modules
 /app/.pnp
 /app/.pnp.js

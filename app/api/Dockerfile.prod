@@ -1,0 +1,10 @@
+# Base on offical Node.js Alpine image
+FROM node
+WORKDIR /app
+RUN npm install --global pm2
+COPY ./package*.json ./
+RUN npm install --production
+COPY ./ ./
+EXPOSE 9091
+USER node
+CMD [ "pm2-runtime", "npm", "--", "start" ]
