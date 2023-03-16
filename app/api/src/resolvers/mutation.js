@@ -1,20 +1,22 @@
-import prisma from "../database.js";
-import fs from "fs";
 import {
   GraphQLUpload,
-  graphqlUploadExpress, // A Koa implementation is also exported.
+  graphqlUploadExpress
 } from "graphql-upload";
-import { finished } from "stream/promises";
 import { dirname, join } from "path";
+
+import { GraphQLError } from "graphql";
 import cloudinary from "cloudinary";
+import { finished } from "stream/promises";
+import fs from "fs";
+/* import multer from "multer"; */
+import pkg from "@prisma/client";
+import prisma from "../database.js";
 cloudinary.config({
   cloud_name: "dsvz1nhky",
   api_key: "639393221736719",
   api_secret: "X_UZjZVyJUq_vZ3AsQBWTjss82E",
 });
-/* import multer from "multer"; */
-import { Prisma } from "@prisma/client";
-import { GraphQLError } from "graphql";
+const { Prisma } = pkg;
 const Mutation = {
   createTextsToComponent: async (parent, args) => {
     console.log(args, "ARGSS");
