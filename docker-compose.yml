@@ -42,7 +42,5 @@ services:
     build:
       context: ./app/api/
       dockerfile: Dockerfile.prod
-    ports:
-    - '9091:9091'
 volumes:
   postgres:
