@@ -1,10 +1,29 @@
-# Base on offical Node.js Alpine image
+# Base on official Node.js Alpine image
 FROM node
+
+# Set working directory
 WORKDIR /app
-RUN npm install --global pm2
-COPY ./package*.json ./
+
+# Install pm2 globally with sudo
+RUN apk --update add sudo && \
+    npm install --global pm2 && \
+    adduser -D user && \
+    echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
 RUN npm install --production
-COPY ./ ./
+
+# Copy application code
+COPY . .
+
+# Expose the application port
 EXPOSE 9091
-USER node
-CMD [ "pm2-runtime", "npm", "--", "start" ]
+
+# Set user as root
+USER root
+
+# Start the application with pm2
+CMD ["pm2-runtime", "npm", "--", "start"]
