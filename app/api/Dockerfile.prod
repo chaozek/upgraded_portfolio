@@ -1,6 +1,7 @@
 # Base on official Node.js Alpine image
 FROM node:14-alpine
 # Install apk manually
+RUN npm install --global pm2
 RUN apk update && apk add --no-cache apk-tools
 
 # Set working directory
