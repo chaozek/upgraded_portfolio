@@ -6,13 +6,6 @@ RUN apk update && apk add --no-cache apk-tools
 # Set working directory
 WORKDIR /app
 
-
-# Install pm2 globally with sudo
-RUN apk --update add sudo && \
-    npm install --global pm2 && \
-    adduser -D user && \
-    echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
