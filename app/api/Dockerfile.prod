@@ -2,8 +2,7 @@
 FROM node:15-alpine
 # Install apk manually
 RUN npm install --global pm2
-RUN apk update && apk add --no-cache apk-tools
-
+RUN npx prisma generate
 # Set working directory
 WORKDIR /app
 
@@ -23,4 +22,4 @@ EXPOSE 9091
 USER root
 
 # Start the application with pm2
-CMD ["pm2-runtime",  "src/index.js"]
+CMD ["pm2",  "src/index.js"]
