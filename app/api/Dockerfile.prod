@@ -1,8 +1,12 @@
 # Base on official Node.js Alpine image
 FROM node
 
+# Install apk manually
+RUN apk update && apk add --no-cache apk-tools
+
 # Set working directory
 WORKDIR /app
+
 
 # Install pm2 globally with sudo
 RUN apk --update add sudo && \
