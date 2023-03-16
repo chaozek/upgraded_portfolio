@@ -6,7 +6,7 @@
   "target": "esnext",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 src/index.js",
+    "start": "pm2 start src/index.js",
     "dev": "nodemon src/",
     "migrate": "npx prisma migrate dev"
   },
