@@ -1,6 +1,5 @@
 # Base on official Node.js Alpine image
-FROM node:19.4.0-alpine3.14
-
+FROM alpine:3.16
 # Install apk manually
 RUN apk update && apk add --no-cache apk-tools
 
