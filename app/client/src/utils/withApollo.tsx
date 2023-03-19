@@ -4,11 +4,12 @@ import {
   ApolloProvider,
   InMemoryCache,
 } from "@apollo/client";
-import { useRouter } from "next/router";
-import nextWithApollo from "next-with-apollo";
+
 import { createUploadLink } from "apollo-upload-client";
+import nextWithApollo from "next-with-apollo";
+import { useRouter } from "next/router";
 const uploadLink = createUploadLink({
-  uri: "http://localhost:9091/graphql",
+  uri: "http://localhost:3001/graphql",
 });
 
 const withApollo = nextWithApollo(
