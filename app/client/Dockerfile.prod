@@ -1,7 +1,7 @@
 # Base on offical Node.js Alpine image
 FROM node:19-alpine
 WORKDIR /app
-RUN npm install --global yarn pm2
+RUN npm install --global --force yarn pm2
 COPY ./package*.json ./
 RUN yarn install --production 
 COPY ./ ./
