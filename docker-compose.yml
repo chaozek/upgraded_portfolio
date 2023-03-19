@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile.prod
   nextjs-app:
     build:
-      context: .
+      context: ./app/client/
       dockerfile: ./app/client/Dockerfile.prod
   nginx: 
     build:
