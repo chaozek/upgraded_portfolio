@@ -5,9 +5,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
+//CHANGE HERE LATER --TODO
+//  url      = env("DATABASE_URL")
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://root:password@api.brnensky-vyvojar.eu:5432/typeormdemo?schema=public"
 }
 
 model Component {
