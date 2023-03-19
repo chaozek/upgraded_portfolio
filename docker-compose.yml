@@ -7,7 +7,7 @@ services:
   nextjs-app:
     build:
       context: ./app/client/
-      dockerfile: ./app/client/Dockerfile.prod
+      dockerfile: Dockerfile.prod
   nginx: 
     build:
       context: ./nginx
