@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next -p 3001",
-    "build": "next build -p 3001",
+    "build": "next build",
     "start": "next start -p 3001",
     "gen": "graphql-codegen --config codegen.yml"
   },

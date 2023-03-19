@@ -1,8 +1,10 @@
-import { Text } from "@chakra-ui/react";
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
-import { PageComponentQuery } from "../../../../generated";
-import png from "../../../assets/png.png";
+
 import EditableField from "../../../utils/editableField";
+import { PageComponentQuery } from "../../../../generated";
+import { Text } from "@chakra-ui/react";
+import png from "../../../assets/png.png";
+
 interface Props {
   component: PageComponentQuery["pageComponent"]["components"]["0"];
   isAdmin: boolean;
@@ -13,7 +15,7 @@ export const Hero = ({ component, isAdmin = true, parentComponent }: Props) => {
   const renderExistingComponent = (id) => {
     return (
       component &&
-      component.texts.find((text) => {
+      component.texts.find((text: any) => {
         return text.mapid === id;
       })
     );
@@ -40,7 +42,7 @@ export const Hero = ({ component, isAdmin = true, parentComponent }: Props) => {
           >
             {component &&
             component.texts &&
-            component.texts.find((text) => text.mapid == 1)
+            component.texts.find((text: any) => text.mapid == 1)
               ? renderExistingComponent(1)
               : {
                   mapId: 1,

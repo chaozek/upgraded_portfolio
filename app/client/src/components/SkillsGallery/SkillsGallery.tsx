@@ -1,10 +1,11 @@
-import { Select } from "@chakra-ui/react";
-import { Input } from "@chakra-ui/react";
-import { Image, Box, Button, Flex, Heading } from "@chakra-ui/react";
-
-import { Field, Form, Formik } from "formik";
+import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
 import { ComponentImagesDocument, useDeleteImageMutation } from "generated";
+import { Field, Form, Formik } from "formik";
+
+import { Input } from "@chakra-ui/react";
+import { Select } from "@chakra-ui/react";
 import { useRef } from "react";
+
 const SkillsGallery = ({ data, onChange, images, loading: _loading }) => {
   const btnRef = useRef<any>();
   const selectRef = useRef<any>();
@@ -13,7 +14,7 @@ const SkillsGallery = ({ data, onChange, images, loading: _loading }) => {
       img.split("/upload")[0] + "/" + "upload/" + size + img.split("/upload")[1]
     );
   };
-  const [deleteImage, { _, loading, error }] = useDeleteImageMutation();
+  const [deleteImage, { loading, error }] = useDeleteImageMutation();
   return (
     <Box backgroundColor="blue">
       <Heading align="center" m={[2, 3]}>

@@ -1,15 +1,16 @@
-import _ from "lodash";
+import { Button, Flex, Grid, GridItem } from "@chakra-ui/react";
 import {
   PageComponentQuery,
   useAddComponentToRenderMutation,
 } from "../../../generated";
-import _Modal from "../../utils/modal/Modal";
-import { useCallback, useState, useEffect, useContext } from "react";
-import update from "immutability-helper";
-import { Card } from "./Card";
-import { Flex, Grid, Button, GridItem } from "@chakra-ui/react";
 import { addComponentToRender, generateComponentShape } from "../helpers";
+import { useCallback, useContext, useEffect, useState } from "react";
+
+import { Card } from "./Card";
 import { CreateComponent } from "src/createComponent/CreateComponent";
+import _ from "lodash";
+import _Modal from "../../utils/modal/Modal";
+import update from "immutability-helper";
 
 function Index(props) {
   const data = _.get(
@@ -86,6 +87,7 @@ function Index(props) {
       return (
         <Card
           key={card.id}
+          isAdmin={true}
           componentsOrderForCards={componentsOrderForCards}
           index={index}
           id={card.id}
