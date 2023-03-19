@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import { createContext } from "react";
 
 interface MyContextData {
@@ -8,8 +10,6 @@ interface MyContextData {
 }
 
 export const MyContext = createContext<MyContextData | null>(null);
-
-import React, { useState } from "react";
 
 export const MyContextProvider: React.FC = ({ children }: any) => {
   const [contextData, setContextData] = useState<MyContextData>({
