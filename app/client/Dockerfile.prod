@@ -3,7 +3,7 @@ FROM node:19-alpine
 WORKDIR /app
 RUN npm install --global pm2
 COPY ./package*.json ./
-RUN npm install --production --force 
+RUN npm install --production 
 COPY ./ ./
 RUN npm run build
 EXPOSE 3001
