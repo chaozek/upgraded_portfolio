@@ -1,5 +1,5 @@
 overwrite: true
-schema: "http://localhost:9091/graphql"
+schema: "https://api.brnensky-vyvojar.eu/graphql"
 documents: "src/graphql/*.ts"
 
 generates:
