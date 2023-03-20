@@ -1,4 +1,4 @@
-FROM postgres:13
+FROM postgres:15
 
 # Set the default environment variables
 ENV POSTGRES_USER=db_user2 \
