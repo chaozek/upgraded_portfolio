@@ -9,7 +9,7 @@ generator client {
 //  url      = env("DATABASE_URL")
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://root:password@api.brnensky-vyvojar.eu:5432/typeormdemo?schema=public"
+  url      = "postgresql://db_user2:db_password2@api.brnensky-vyvojar.eu:5432/typeormdemo?schema=public"
 }
 
 model Component {
