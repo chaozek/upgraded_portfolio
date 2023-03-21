@@ -1,15 +1,14 @@
-FROM postgres:15
+# Use the official PostgreSQL image from Docker Hub
+FROM postgres
 
-# Set the default environment variables
-ENV POSTGRES_USER=db_user2 \
-    POSTGRES_PASSWORD=db_password2
+# Set the password for the PostgreSQL user
+ENV POSTGRES_PASSWORD="password"
 
-# Copy the PostgreSQL configuration files to the container
-COPY ./postgresql.conf /var/lib/postgresql/data/
-COPY ./pg_hba.conf /var/lib/postgresql/data/
+# Create a Docker volume to store the PostgreSQL data
+VOLUME /var/lib/postgresql/data
 
-# Expose the PostgreSQL port
+# Expose the PostgreSQL port to the host
 EXPOSE 5432
 
-# Set the command to run when the container starts
-CMD ["postgres", "--config-file=/var/lib/postgresql/data/postgresql.conf"]
+# Start the PostgreSQL server when the container starts
+CMD ["postgres"]
