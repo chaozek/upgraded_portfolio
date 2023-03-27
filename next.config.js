@@ -6,4 +6,7 @@ module.exports = {
     };
     return config;
   },
+  publicRuntimeConfig: {
+    staticFolder: "/public",
+  },
 };

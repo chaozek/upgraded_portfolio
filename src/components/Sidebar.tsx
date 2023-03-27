@@ -1,24 +1,16 @@
-import { useState } from "react";
 import {
-  Flex,
-  Text,
-  IconButton,
-  Divider,
-  Avatar,
-  Heading,
-} from "@chakra-ui/react";
-import {
-  FiMenu,
+  FiAward,
   FiHome,
-  FiCalendar,
+  FiPhone,
+  FiStar,
   FiUser,
-  FiDollarSign,
-  FiBriefcase,
-  FiSettings,
+  FiZap,
 } from "react-icons/fi";
-import { IoPawOutline, IoClose } from "react-icons/io5";
-import NavItem from "../components/NavItem";
+import { Flex, IconButton } from "@chakra-ui/react";
+
 import { Container } from "./Container";
+import { IoClose } from "react-icons/io5";
+import NavItem from "../components/NavItem";
 
 interface Props {
   navSize: string;
@@ -32,6 +24,36 @@ export const Sidebar = ({
   changeShowMobileMenu,
   showMobileMenu,
 }: Props) => {
+  let closeOnMobileLinkClick = () => {
+    changeNavSize("large");
+    changeShowMobileMenu(!showMobileMenu);
+  };
+  const menuLinks = [
+    {
+      icon: FiHome,
+      title: "home",
+    },
+    {
+      icon: FiUser,
+      title: "about",
+    },
+    {
+      icon: FiStar,
+      title: "skills",
+    },
+    {
+      icon: FiAward,
+      title: "projects",
+    },
+    {
+      icon: FiPhone,
+      title: "contact",
+    },
+    {
+      icon: FiZap,
+      title: "pagebuilder",
+    },
+  ];
   return (
     <Flex
       pos="fixed"
@@ -52,7 +74,7 @@ export const Sidebar = ({
         changeNavSize("large");
       }}
       onMouseLeave={() => {
-        !showMobileMenu ? changeNavSize("small") : null;
+        changeNavSize("small");
       }}
     >
       <Container h="100%" justifyContent="space-between">
@@ -65,10 +87,7 @@ export const Sidebar = ({
           position="absolute"
           top="0"
           right="5px"
-          onClick={() => {
-            changeNavSize("large");
-            changeShowMobileMenu(!showMobileMenu);
-          }}
+          onClick={closeOnMobileLinkClick}
         />
         <Flex
           p="10px"
@@ -78,33 +97,16 @@ export const Sidebar = ({
           as="nav"
           mt="30px"
         >
-          <NavItem navSize={navSize} icon={FiHome} title="home" />
-          <NavItem navSize={navSize} icon={FiCalendar} title="about" />
-          <NavItem navSize={navSize} icon={FiUser} title="Skills" />
-          <NavItem navSize={navSize} icon={IoPawOutline} title="Works" />
-          <NavItem navSize={navSize} icon={FiDollarSign} title="Contact" />
-        </Flex>
-        <Flex
-          p="5%"
-          flexDir="column"
-          w="100%"
-          alignItems={navSize == "small" ? "center" : "flex-start"}
-          mb={4}
-        >
-          <Divider display={navSize == "small" ? "none" : "flex"} />
-          <Flex mt={4} align="center">
-            <Avatar size="sm" src="avatar-1.jpg" />
-            <Flex
-              flexDir="column"
-              ml={4}
-              display={navSize == "small" ? "none" : "flex"}
-            >
-              <Heading as="h3" size="sm">
-                Pavel Kaplan
-              </Heading>
-              <Text color="gray">Admin</Text>
-            </Flex>
-          </Flex>
+          {menuLinks.map(({ icon, title }) => {
+            return (
+              <NavItem
+                onClick={closeOnMobileLinkClick}
+                navSize={navSize}
+                icon={icon}
+                title={title}
+              />
+            );
+          })}
         </Flex>
       </Container>
     </Flex>

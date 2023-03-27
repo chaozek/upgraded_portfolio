@@ -3,4 +3,6 @@ node_modules
 .gitignore
 .dockerignore
 Dockerfile
+Dockerfile.dev
+Dockerfile.prod
 .env

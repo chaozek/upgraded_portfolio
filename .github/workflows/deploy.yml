@@ -1,0 +1,37 @@
+name: deploy for master
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out the repo
+    #  - name: set ssh key
+    #    run: |
+    #      mkdir -p ~/.ssh/
+    #      echo "${{secrets.COSEN_ID_RSA}}" > ~/.ssh/id_rsa
+    #      chmod 600 ~/.ssh/id_rsa
+    #      ssh-keyscan "106.xx.xx.xx" >> ~/.ssh/known_hosts
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.KEY }}
+        command_timeout: 20m
+        script: |
+          cd /pka;
+          git pull origin main;
+          docker-compose up --force-recreate --build -d;
+          docker image prune -f;
+      #- name: delete ssh key
+      #  run: rm -rf ~/.ssh/id_rsa

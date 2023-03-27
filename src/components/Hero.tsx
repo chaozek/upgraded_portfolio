@@ -4,13 +4,15 @@ import {
   Heading,
   IconButton,
   Image,
-  Text,
   List,
   ListItem,
+  Text,
 } from "@chakra-ui/react";
-import me from "../../public/me.jpg";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+
 import { Button } from "./CustomButton";
-import { BsLinkedin, BsGithub } from "react-icons/bs";
+import Link from "next/link";
+import me from "../../public/me.jpg";
 
 export const Hero = () => {
   return (
@@ -59,13 +61,21 @@ export const Hero = () => {
           </Text>
           who love his job.
         </Text>
-        <Box display={"flex"} alignItems="flex-end">
+        <Box
+          display={"flex"}
+          alignItems="flex-end"
+          justifyContent={["center", "center", "left"]}
+        >
           <Box>
-            <Button>Resumé</Button>
+            <Button as="a" href="/assets/PK_CV.pdf" target="_blank">
+              Resumé
+            </Button>
           </Box>
           <List display="flex" alignItems="center" ml="10">
             <ListItem ml="4">
               <IconButton
+                as="a"
+                href="https://www.linkedin.com/in/pavel-kaplan-75032b138/"
                 aria-label="Call Segun"
                 color={"greenTheme"}
                 icon={<BsLinkedin />}
@@ -74,6 +84,8 @@ export const Hero = () => {
             </ListItem>
             <ListItem ml="4">
               <IconButton
+                as="a"
+                href="https://github.com/chaozek"
                 boxShadow="0px 4px 6px rgb(134 151 168 / 10%)"
                 aria-label="Call Segun"
                 color={"greenTheme"}

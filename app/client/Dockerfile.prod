@@ -1,0 +1,11 @@
+# Base on offical Node.js Alpine image
+FROM node:19-alpine
+WORKDIR /app
+RUN npm install --global --force yarn pm2
+COPY ./package*.json ./
+RUN yarn install --production  --legacy-peer-deps
+COPY ./ ./
+RUN yarn run build
+EXPOSE 3001
+USER root
+CMD [ "pm2-runtime", "yarn", "--", "start" ]

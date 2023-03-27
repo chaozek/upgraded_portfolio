@@ -28,7 +28,8 @@ export const Layout = ({ children }: { children: JSX.Element }) => {
         size="lg"
         top="10px"
         display={["flex", "flex", "flex", "none"]}
-        position="absolute"
+        position="fixed"
+        right="5px"
         onClick={() => {
           changeNavSize("large");
           changeShowMobileMenu(!showMobileMenu);
@@ -47,7 +48,11 @@ export const Layout = ({ children }: { children: JSX.Element }) => {
             marginLeft={["0px", "0px", "0px", "75px"]}
             h={"100vh"}
           >
-            <Box p={["0px", "0 33px", "0 33px"]} maxW={"1140px"} m="0 auto">
+            <Box
+              p={["0px 0px", "0px 10px", "0px 33px", "0px 33px"]}
+              maxW={"1140px"}
+              m="0 auto"
+            >
               {children}
             </Box>
           </Box>
