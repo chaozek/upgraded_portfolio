@@ -20,7 +20,7 @@ export const fireCreateComponent = (componentToRenderStatic, componentName) => {
               parentName: "intro",
               title: "TEST",
               texts: {
-                title: "DEFAULT VALUE",
+                title: "Lorem ipsum dolor sit 2",
                 textOrder: "text1",
               },
             },

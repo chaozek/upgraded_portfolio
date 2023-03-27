@@ -100,6 +100,7 @@ const Layout = ({
           flexDirection={{ md: "column" }}
           justifyContent="center"
           alignItems="center"
+          minWidth="300px"
         >
           <Collapsible trigger="ENABLE FEATURES">
             <Box
@@ -130,7 +131,7 @@ const Layout = ({
                 backgroundColor="#1F1F4B"
                 width="90%"
               >
-                {isTextEditable ? "Enable" : "Disable"} text editor
+                {!isTextEditable ? "Enable" : "Disable"} text editor
               </Button>
             </Box>
           </Collapsible>
@@ -227,7 +228,7 @@ const Layout = ({
               aria-label="Open menu"
               isDisabled={!isAdmin}
               icon={<FaRegEdit />}
-              onClick={setSideMenuOpened}
+              onClick={() => setSideMenuOpened()}
               color="red"
               variant="ghost"
               size="md"

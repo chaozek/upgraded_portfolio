@@ -1,4 +1,11 @@
-import { FiAward, FiHome, FiPhone, FiStar, FiUser } from "react-icons/fi";
+import {
+  FiAward,
+  FiHome,
+  FiPhone,
+  FiStar,
+  FiUser,
+  FiZap,
+} from "react-icons/fi";
 import { Flex, IconButton } from "@chakra-ui/react";
 
 import { Container } from "./Container";
@@ -21,7 +28,32 @@ export const Sidebar = ({
     changeNavSize("large");
     changeShowMobileMenu(!showMobileMenu);
   };
-
+  const menuLinks = [
+    {
+      icon: FiHome,
+      title: "home",
+    },
+    {
+      icon: FiUser,
+      title: "about",
+    },
+    {
+      icon: FiStar,
+      title: "skills",
+    },
+    {
+      icon: FiAward,
+      title: "projects",
+    },
+    {
+      icon: FiPhone,
+      title: "contact",
+    },
+    {
+      icon: FiZap,
+      title: "pagebuilder",
+    },
+  ];
   return (
     <Flex
       pos="fixed"
@@ -65,36 +97,16 @@ export const Sidebar = ({
           as="nav"
           mt="30px"
         >
-          <NavItem
-            onClick={closeOnMobileLinkClick}
-            navSize={navSize}
-            icon={FiHome}
-            title="home"
-          />
-          <NavItem
-            onClick={closeOnMobileLinkClick}
-            navSize={navSize}
-            icon={FiUser}
-            title="about"
-          />
-          <NavItem
-            onClick={closeOnMobileLinkClick}
-            navSize={navSize}
-            icon={FiStar}
-            title="skills"
-          />
-          <NavItem
-            onClick={closeOnMobileLinkClick}
-            navSize={navSize}
-            icon={FiAward}
-            title="projects"
-          />
-          <NavItem
-            onClick={closeOnMobileLinkClick}
-            navSize={navSize}
-            icon={FiPhone}
-            title="contact"
-          />
+          {menuLinks.map(({ icon, title }) => {
+            return (
+              <NavItem
+                onClick={closeOnMobileLinkClick}
+                navSize={navSize}
+                icon={icon}
+                title={title}
+              />
+            );
+          })}
         </Flex>
       </Container>
     </Flex>

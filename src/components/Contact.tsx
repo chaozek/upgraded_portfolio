@@ -1,9 +1,16 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { Flex, IconButton, ListItem, Text } from "@chakra-ui/react";
+
 import { WhiteBlock } from "./WhiteBlock";
+
 export const Contact = () => (
   <div id="contact">
     <WhiteBlock description="Any questions?" header="Contact">
-      <Flex flexDirection={"column"}>
+      <Flex
+        flexDirection={"column"}
+        alignItems="center"
+        justifyContent="center"
+      >
         <Text
           as="a"
           href="mailto:pkaplan1@seznam.cz"
@@ -23,6 +30,16 @@ export const Contact = () => (
         >
           +420 735 545 288
         </Text>
+        <IconButton
+          as="a"
+          href="https://www.linkedin.com/in/pavel-kaplan-75032b138/"
+          aria-label="Call Segun"
+          color={"greenTheme"}
+          icon={<BsLinkedin />}
+          boxShadow="0px 4px 6px rgb(134 151 168 / 10%)"
+          width="40px"
+          mt="2"
+        />
       </Flex>
     </WhiteBlock>
   </div>

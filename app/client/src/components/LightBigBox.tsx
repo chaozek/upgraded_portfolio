@@ -36,9 +36,6 @@ export const LightBigBox = ({ component, parentComponent, parentName, text }) =>
         <Card
           boxShadow="#16173B 0px 8px 24px"
           transition="all 0.15s ease-out"
-          _hover={{
-            boxShadow: "rgb(33, 12, 222) 0px 20px 30px -10px",
-          }}
           p="10"
           background="#6565FD"
           height="100%"

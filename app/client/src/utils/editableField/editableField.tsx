@@ -100,7 +100,7 @@ const EditableField = ({
               parentName: children.name,
               title: "TEST",
               texts: {
-                title: `EDITABLE FIELD ${children.name}, ${children.textOrder}`,
+                title: `lorem ipsum dolor sit`,
                 textOrder: children.textOrder,
               },
             },

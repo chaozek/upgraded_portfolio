@@ -1,5 +1,4 @@
 import {
-  ComponentImagesDocument,
   ComponentImagesMoreComponentsDocument,
   useDeleteImageMutation,
 } from "generated";
@@ -26,7 +25,6 @@ const Column = ({
   isImageEditable,
   image,
 }) => {
-  console.log(isImageEditable, "VisImageEditable");
   const [deleteImage, { _, loading, error }]: any = useDeleteImageMutation();
   const getImageCloudinarySize = (img, size) => {
     return (
@@ -35,7 +33,6 @@ const Column = ({
       img.split("/upload")[1]
     );
   };
-  const selectRef = useRef<any>();
   const btnRef = useRef<any>();
   return (
     <Box>
@@ -45,9 +42,6 @@ const Column = ({
         boxShadow="#16173B 0px 8px 24px"
         transition="all 0.15s ease-out"
         p="5"
-        _hover={{
-          boxShadow: "rgb(33, 12, 222) 0px 20px 30px -10px",
-        }}
         justifyContent="center"
         flexDirection="column"
         alignItems="center"
@@ -56,6 +50,8 @@ const Column = ({
         <Image
           cursor={image && isImageEditable ? "pointer" : null}
           width={{ base: "100px", md: "300px", lg: "200px" }}
+          height={{ base: "100px", md: "300px", lg: "200px" }}
+          objectFit="cover"
           zIndex="1"
           id="heroImg"
           borderRadius="100%"

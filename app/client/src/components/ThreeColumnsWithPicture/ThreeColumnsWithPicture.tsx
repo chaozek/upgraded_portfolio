@@ -23,7 +23,6 @@ const ThreeColumnsWithPicture = ({
   ...rest
 }) => {
   const renderColumns = () => {
-    console.log(rest, "REST");
     const [imageComp, setImagesComp] = useState([]);
     const columns = [];
     useEffect(() => {
@@ -44,6 +43,7 @@ const ThreeColumnsWithPicture = ({
             parentComponent={parentComponent}
             loading={_loading}
             index={i}
+            key={i}
             isImageEditable={isImageEditable}
           />
         );
@@ -62,6 +62,7 @@ const ThreeColumnsWithPicture = ({
               parentComponent={parentComponent}
               loading={_loading}
               index={i}
+              key={i}
               isImageEditable={isImageEditable}
             />
           );

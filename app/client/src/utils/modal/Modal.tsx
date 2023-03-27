@@ -24,12 +24,14 @@ export default function BasicModal({
       <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Edit Text</ModalHeader>
+          <ModalHeader>Edit Component Text</ModalHeader>
           <ModalCloseButton />
           <ModalBody>{children}</ModalBody>
           <ModalFooter>
             <Button
-              colorScheme="green"
+              background="#6565FD"
+              color="white"
+              _hover={{ backgroundColor: "#1B1B42" }}
               mr={3}
               onClick={() => {
                 onClose();
