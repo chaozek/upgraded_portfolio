@@ -63,9 +63,9 @@ const WebsiteIntro = () => {
           <Link
             mt="5"
             target="_blank"
-            href="https://github.com/chaozek/upgraded_portfolio/tree/main/app"
+            href="https://github.com/chaozek/upgraded_portfolio"
           >
-            https://github.com/chaozek/upgraded_portfolio/tree/main/app
+            https://github.com/chaozek/upgraded_portfolio
           </Link>
         </Flex>
       </Collapsible>
