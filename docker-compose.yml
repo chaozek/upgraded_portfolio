@@ -1,0 +1,56 @@
+version: "3"
+services:
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+  nextjs-app:
+    build:
+      context: ./app/client/
+      dockerfile: Dockerfile.prod
+    environment:
+      NEXT_PUBLIC_TEST: ${NEXT_PUBLIC_TEST}
+  nginx: 
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./src:/usr/app/src
+      - /usr/app/node_modules 
+      - ./nginx:/etc/nginx/conf.d
+      - ./nginx:/var/www/html/html_test
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes: 
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    environment:
+      - NEXT_PUBLIC_TEST=dockercompose
+      - CHOKIDAR_USEPOLLING=true
+      #-env_file:
+      #  - ./.env
+  postgres:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    ports:
+    - '5432:5432'
+   # volumes:
+  #  - ./postgres:/var/lib/postgresql/data
+  api:
+    build:
+      context: ./app/api/
+      dockerfile: Dockerfile.prod
+    deploy:
+      resources:
+        limits:
+          memory: 2g
+volumes:
+  postgres:

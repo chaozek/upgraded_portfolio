@@ -1,0 +1,33 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "target": "esnext",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx prisma generate && pm2-runtime start src/index.js",
+    "dev": "nodemon src/",
+    "migrate": "npx prisma migrate dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.6.1",
+    "apollo-server": "^3.11.1",
+    "apollo-server-express": "^3.11.1",
+    "cloudinary": "^1.32.0",
+    "graphql": "^16.6.0",
+    "graphql-middleware": "^6.1.33",
+    "graphql-upload": "13.0.0",
+    "nodemon": "^2.0.20"
+  },
+  "resolutions": {
+    "graphql-upload": "11.0.0"
+  },
+  "devDependencies": {
+    "@babel/helper-compilation-targets": "^7.20.0",
+    "prisma": "^4.6.1"
+  }
+}
