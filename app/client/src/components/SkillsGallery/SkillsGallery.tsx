@@ -1,10 +1,8 @@
 import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
-import { ComponentImagesDocument, useDeleteImageMutation } from "generated";
 import { Field, Form, Formik } from "formik";
-
-import { Input } from "@chakra-ui/react";
-import { Select } from "@chakra-ui/react";
+import { ComponentImagesDocument, useDeleteImageMutation } from "generated";
 import { useRef } from "react";
+
 
 const SkillsGallery = ({ data, onChange, images, loading: _loading }) => {
   const btnRef = useRef<any>();

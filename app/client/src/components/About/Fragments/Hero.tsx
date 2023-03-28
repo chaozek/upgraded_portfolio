@@ -1,9 +1,8 @@
-import { Box, Flex, Heading, Image } from "@chakra-ui/react";
-
-import EditableField from "../../../utils/editableField";
+import { Box, Flex, Image } from "@chakra-ui/react";
 import { PageComponentQuery } from "../../../../generated";
-import { Text } from "@chakra-ui/react";
 import png from "../../../assets/png.png";
+import EditableField from "../../../utils/editableField";
+
 
 interface Props {
   component: PageComponentQuery["pageComponent"]["components"]["0"];

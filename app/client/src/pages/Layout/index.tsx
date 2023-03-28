@@ -1,15 +1,14 @@
-import { compose, withContext, withProps, withState } from "recompose";
-
-import Layout from "./Layout";
-import { MyContext } from "src/context";
-import _ from "lodash";
-import { generateComponentShape } from "src/views/helpers";
-import { getComponentData } from "src/HOC/getComponentData";
 import { getDataFromTree } from "@apollo/client/react/ssr";
-import { transformData } from "src/helpers/transformData";
 import { useAddComponentToRenderMutation } from "generated";
+import _ from "lodash";
 import { useContext } from "react";
+import { compose, withProps } from "recompose";
+import { MyContext } from "src/context";
+import { getComponentData } from "src/HOC/getComponentData";
 import withApollo from "src/utils/withApollo";
+import { generateComponentShape } from "src/views/helpers";
+import Layout from "./Layout";
+
 
 const enhancer = compose(
   withProps((props: any) => {
@@ -53,6 +52,14 @@ const enhancer = compose(
       setIsDraggable: () =>
         setContextData({
           isDraggable: !isDraggable,
+        }),
+      logout: () =>
+        setContextData({
+          isDraggable: false,
+          isImageEditable: false,
+          isAdmin: false,
+          sideMenuOpened: false,
+          isTextEditable: false,
         }),
       setSideMenuOpened: () =>
         setContextData({ sideMenuOpened: !sideMenuOpened }),

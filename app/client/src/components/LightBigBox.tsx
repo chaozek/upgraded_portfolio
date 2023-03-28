@@ -1,13 +1,16 @@
-import { AddIcon, PhoneIcon, StarIcon, WarningIcon } from "@chakra-ui/icons";
+import { StarIcon } from "@chakra-ui/icons";
+import { Box, Card, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-
-import { Box } from "@chakra-ui/react";
-import { Card } from "@chakra-ui/react";
-import EditableField from "src/utils/editableField";
-import { SimpleGrid } from "@chakra-ui/react";
 import { useDrag } from "react-dnd";
+import EditableField from "src/utils/editableField";
 
-export const LightBigBox = ({ component, parentComponent, parentName, text }) => {
+
+export const LightBigBox = ({
+  component,
+  parentComponent,
+  parentName,
+  text,
+}) => {
   const [localComp, setLocalComp] = useState([]);
   const [{ opacity }, dragRef] = useDrag(
     () => ({

@@ -1,12 +1,9 @@
 import "intro.js/introjs.css";
 
+import { Button, Flex } from "@chakra-ui/react";
 import { Hints, Steps } from "intro.js-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { Box } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
-import { Flex } from "@chakra-ui/react";
-import { Text } from "@chakra-ui/react";
 
 const IntroJs = (): JSX.Element => {
   const [stepsEnabled, setStepsEnabled] = useState(false);

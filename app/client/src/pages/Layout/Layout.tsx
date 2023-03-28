@@ -1,28 +1,20 @@
-import { Box, Flex, IconButton, useDisclosure } from "@chakra-ui/react";
 import {
-  Element,
-  Events,
-  Link,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
-import { FaBars, FaRegEdit } from "react-icons/fa";
-import {
-  addComponentToRender,
-  generateComponentShape,
-} from "src/views/helpers";
-
-import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Button } from "@chakra-ui/react";
+  Box,
+  Button,
+  Flex,
+  GridItem,
+  Heading,
+  IconButton,
+  Text,
+} from "@chakra-ui/react";
 import Collapsible from "react-collapsible";
-import { CreateComponent } from "src/createComponent/CreateComponent";
-import { GridItem } from "@chakra-ui/react";
-import { Heading } from "@chakra-ui/react";
+import { FaRegEdit } from "react-icons/fa";
+import { Link } from "react-scroll";
 import IntroJs from "src/components/introJs/Intro";
-import { Text } from "@chakra-ui/react";
-import _ from "lodash";
 import { componentsShape } from "src/createComponent/componentsNames";
+import { CreateComponent } from "src/createComponent/CreateComponent";
+import { addComponentToRender } from "src/views/helpers";
+
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -31,6 +23,7 @@ interface LayoutProps {
   isAdmin: boolean;
   setAdmin: () => void;
   addComponentToRenderMutation: () => void;
+  logout: () => void;
   setImageEditable: () => void;
   data: any;
   components: any[];
@@ -57,9 +50,14 @@ const Layout = ({
   setTextEditable,
   isImageEditable,
   setImageEditable,
+  logout,
 }: LayoutProps) => {
   const handleBothClicks = () => {
-    setAdmin();
+    if (isAdmin === false) {
+      setAdmin();
+    } else {
+      logout();
+    }
   };
   return (
     <Flex flexDirection={{ base: "none", md: "row" }}>

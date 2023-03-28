@@ -1,14 +1,14 @@
 import "../styles/styles.global.scss"; // Global styles
 
-import { ChakraProvider, Flex, Heading } from "@chakra-ui/react";
-
+import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import Layout from "./Layout";
-import { MyContextProvider } from "src/context";
 import WebsiteIntro from "src/components/WebsiteIntro";
+import { MyContextProvider } from "src/context";
 import theme from "../theme";
+import Layout from "./Layout";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

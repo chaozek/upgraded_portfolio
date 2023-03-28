@@ -1,10 +1,9 @@
 import {
   PageComponentDocument,
-  UpdateOrderInComponentsDocument,
   useAddComponentToPageMutation,
 } from "generated";
-
 import { componentsShapeRegex } from "./componentsNames";
+
 
 export const fireCreateComponent = (componentToRenderStatic, componentName) => {
   const [addToComponentPageMutation, { data, loading, error }] =

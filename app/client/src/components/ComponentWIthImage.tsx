@@ -1,18 +1,13 @@
-import { ComponentImagesDocument, useDeleteImageMutation } from "generated";
+import { Box, Button, Flex, Image } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
-
-import { Box } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
-import EditableField from "src/utils/editableField";
-import { Flex } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react";
-import IntroJs from "./introJs/Intro";
-import React from "react";
+import { ComponentImagesDocument, useDeleteImageMutation } from "generated";
+import { useRef } from "react";
 import { compose } from "recompose";
 import { getComponentImages } from "src/HOC/getComponentImages";
 import { uploadImageHOC } from "src/HOC/uploadImageHOC";
-import { useRef } from "react";
 import { withContextData } from "src/HOC/withContextData";
+import EditableField from "src/utils/editableField";
+
 
 const ComponentWIthImage = ({
   component,
