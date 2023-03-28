@@ -1,13 +1,12 @@
-import { Box, FlexProps, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import moment from "moment";
 import Link from "next/link";
-import React from "react";
 import { Button } from "./CustomButton";
 import { WhiteBlock } from "./WhiteBlock";
 
 
 export const About = () => {
-  const a = moment("Feb 01 2022");
+  const a = moment("2022-02-01", "YYYY-MM-DD");
   const b = moment();
   const no_of_days = b.diff(a, "days");
   return (

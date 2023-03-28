@@ -14,5 +14,12 @@ body {
 }
 
 .Collapsible__trigger{
-    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    gap: 5px;
 }
+.Collapsible__trigger.is-open svg {
+    transform: rotate(90deg);
+  }
+  

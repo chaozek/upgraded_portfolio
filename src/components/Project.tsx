@@ -1,22 +1,9 @@
-import {
-  Box,
-  Flex,
-  FlexProps,
-  Heading,
-  IconButton,
-  Link,
-  Text,
-} from "@chakra-ui/react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-
-import React from "react";
+import { Box, Flex, Heading, IconButton } from "@chakra-ui/react";
+import { BsGithub } from "react-icons/bs";
 import { WhiteBlock } from "./WhiteBlock";
-import moment from "moment";
+
 
 export const Project = () => {
-  const a = moment("Feb 01 2022");
-  const b = moment();
-  const no_of_days = b.diff(a, "days");
   return (
     <Box id="pagebuilder">
       <WhiteBlock

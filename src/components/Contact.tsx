@@ -1,7 +1,7 @@
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { Flex, IconButton, ListItem, Text } from "@chakra-ui/react";
-
+import { Flex, IconButton, Text } from "@chakra-ui/react";
+import { BsLinkedin } from "react-icons/bs";
 import { WhiteBlock } from "./WhiteBlock";
+
 
 export const Contact = () => (
   <div id="contact">

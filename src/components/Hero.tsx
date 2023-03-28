@@ -8,10 +8,8 @@ import {
   ListItem,
   Text,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import atom from "../../public/atom.png";
-import me from "../../public/me.jpg";
 import { Button } from "./CustomButton";
 
 
