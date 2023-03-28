@@ -100,6 +100,7 @@ export const Sidebar = ({
           {menuLinks.map(({ icon, title }) => {
             return (
               <NavItem
+                key={title}
                 onClick={closeOnMobileLinkClick}
                 navSize={navSize}
                 icon={icon}

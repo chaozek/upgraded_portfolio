@@ -1,7 +1,8 @@
 import { Box, FlexProps, Link, Text } from "@chakra-ui/react";
-import moment from "moment";
+
 import React from "react";
 import { WhiteBlock } from "./WhiteBlock";
+import moment from "moment";
 
 export const About = () => {
   const a = moment("Feb 01 2022");
@@ -26,7 +27,7 @@ export const About = () => {
             <strong>
               {" "}
               2021{" "}
-              <Link href="https://www.it-absolvent.cz/" isExternal>
+              <Link href="https://www.it-absolvent.cz/" target="_blank">
                 IT-absolvent
               </Link>{" "}
               graduate
