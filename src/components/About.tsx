@@ -1,5 +1,6 @@
-import { Box, FlexProps, Link, Text } from "@chakra-ui/react";
+import { Box, FlexProps, Text } from "@chakra-ui/react";
 
+import Link from "next/link";
 import React from "react";
 import { WhiteBlock } from "./WhiteBlock";
 import moment from "moment";
@@ -37,15 +38,15 @@ export const About = () => {
             <strong>
               Since February 2022 Iam working as a full-time React developer on
               projects like{" "}
-              <Link href="http://airbank.cz/" isExternal>
+              <Link href="http://airbank.cz/" target="_blank">
                 AirBank
               </Link>
               ,{" "}
-              <Link href="http://zonky.cz/" isExternal>
+              <Link href="http://zonky.cz/" target="_blank">
                 Zonky
               </Link>
               ,{" "}
-              <Link href="http://Bluestyle.cz/" isExternal>
+              <Link href="http://Bluestyle.cz/" target="_blank">
                 Bluestyle
               </Link>
               .
