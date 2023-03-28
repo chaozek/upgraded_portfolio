@@ -1,9 +1,10 @@
 import { Box, FlexProps, Text } from "@chakra-ui/react";
-
+import moment from "moment";
 import Link from "next/link";
 import React from "react";
+import { Button } from "./CustomButton";
 import { WhiteBlock } from "./WhiteBlock";
-import moment from "moment";
+
 
 export const About = () => {
   const a = moment("Feb 01 2022");
@@ -15,7 +16,7 @@ export const About = () => {
         <>
           <Text>
             I'm self taught web developer from{" "}
-            <strong>Czech Republic, Brno</strong>.{process.env.NEXT_PUBLIC_TEST}
+            <strong>Czech Republic, Brno</strong>.
             <br />
             It has all began back in 2018 when I was working as marketing
             manager. I couldn't find any reliable website developer so I've
@@ -47,9 +48,15 @@ export const About = () => {
               </Link>
               ,{" "}
               <Link href="http://Bluestyle.cz/" target="_blank">
-                Bluestyle
+                Bluestyle.
               </Link>
-              .
+              <Button
+                as="a"
+                href="https://new-portfolio-mocha.vercel.app/ita"
+                target="_blank"
+              >
+                Check out my old website
+              </Button>
             </strong>
           </Text>
           <br />

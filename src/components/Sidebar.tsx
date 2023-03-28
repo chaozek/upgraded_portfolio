@@ -1,3 +1,4 @@
+import { Flex, IconButton } from "@chakra-ui/react";
 import {
   FiAward,
   FiHome,
@@ -6,11 +7,10 @@ import {
   FiUser,
   FiZap,
 } from "react-icons/fi";
-import { Flex, IconButton } from "@chakra-ui/react";
-
-import { Container } from "./Container";
 import { IoClose } from "react-icons/io5";
 import NavItem from "../components/NavItem";
+import { Container } from "./Container";
+
 
 interface Props {
   navSize: string;
@@ -46,12 +46,12 @@ export const Sidebar = ({
       title: "projects",
     },
     {
-      icon: FiPhone,
-      title: "contact",
-    },
-    {
       icon: FiZap,
       title: "pagebuilder",
+    },
+    {
+      icon: FiPhone,
+      title: "contact",
     },
   ];
   return (

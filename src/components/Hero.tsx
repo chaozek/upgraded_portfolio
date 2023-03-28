@@ -8,11 +8,12 @@ import {
   ListItem,
   Text,
 } from "@chakra-ui/react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-
-import { Button } from "./CustomButton";
 import Link from "next/link";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import atom from "../../public/atom.png";
 import me from "../../public/me.jpg";
+import { Button } from "./CustomButton";
+
 
 export const Hero = () => {
   return (
@@ -28,21 +29,14 @@ export const Hero = () => {
     >
       <Flex
         flex={["0 0 100%", "0 0 100%", "0 1 50%"]}
-        justifyContent="center"
         flexWrap="wrap"
         flexBasis="200px"
+        justifyContent="end"
       >
         <Image
-          src={me.src}
+          src={atom.src}
           width={["100px", "250px", "350px"]}
           minWidth={["100px", "250px", "350px"]}
-          borderRadius={500}
-          boxShadow={[
-            "none",
-            "none",
-            "12px 0 #81E6D9, 24px 0 #B2F5EA, 36px 0 #E6FFFA",
-          ]}
-          marginX="25px"
         />
       </Flex>
       <Flex
