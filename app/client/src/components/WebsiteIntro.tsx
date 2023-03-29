@@ -8,7 +8,6 @@ import { Text } from "@chakra-ui/react";
 import Collapsible from "react-collapsible";
 import { MdArrowCircleRight, MdCheckCircle } from "react-icons/md";
 
-
 const WebsiteIntro = () => {
   return (
     <Box maxWidth="1000px" m="4" fontWeight="bold" color="white">

@@ -1,4 +1,5 @@
 import "../styles/styles.global.scss"; // Global styles
+import "../../public/fonts/Gotham_Narrow_Book.otf";
 
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
@@ -8,7 +9,6 @@ import WebsiteIntro from "src/components/WebsiteIntro";
 import { MyContextProvider } from "src/context";
 import theme from "../theme";
 import Layout from "./Layout";
-
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

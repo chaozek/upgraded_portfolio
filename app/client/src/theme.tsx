@@ -3,7 +3,7 @@ import { createBreakpoints, mode } from "@chakra-ui/theme-tools";
 
 const fonts = {
   heading: `'Alexandria', sans-serif`,
-  body: `'Roboto', sans-serif`,
+  body: `'Gotham_Narrow_Book', sans-serif`,
 };
 
 const breakpoints = createBreakpoints({
