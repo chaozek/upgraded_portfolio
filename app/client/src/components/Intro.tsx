@@ -15,7 +15,7 @@ export const Intro = ({
   text,
 }) => {
   const [localComp, setLocalComp] = useState([]);
-  const [{ opacity }, dragRef] = useDrag(
+  /*   const [{ opacity }, dragRef] = useDrag(
     () => ({
       type: "INTRO",
       item: { text },
@@ -26,7 +26,7 @@ export const Intro = ({
       },
     }),
     []
-  );
+  ); */
   useEffect(() => {
     if (!component) return;
     else setLocalComp(component);
@@ -38,8 +38,8 @@ export const Intro = ({
 
   return (
     <SimpleGrid
-      ref={dragRef}
-      style={{ opacity }}
+      /*      ref={dragRef}
+      style={{ opacity }} */
       my="8"
       columns={[1, 2, 2, 2]}
       spacing={10}

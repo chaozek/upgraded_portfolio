@@ -6,7 +6,11 @@ import { List } from "@chakra-ui/react";
 import { ListItem } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import Collapsible from "react-collapsible";
-import { MdArrowCircleRight, MdCheckCircle } from "react-icons/md";
+import {
+  MdArrowCircleLeft,
+  MdArrowCircleRight,
+  MdCheckCircle,
+} from "react-icons/md";
 
 const WebsiteIntro = () => {
   return (
@@ -15,7 +19,9 @@ const WebsiteIntro = () => {
         trigger={
           <>
             <MdArrowCircleRight />
-            <span>APP DESCRIPTION (start by clicking here)</span>
+            <Heading size="md">
+              APP DESCRIPTION (start by clicking here)
+            </Heading>
           </>
         }
       >

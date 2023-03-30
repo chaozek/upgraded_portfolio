@@ -1,7 +1,6 @@
-import { Box, Flex, Heading, IconButton } from "@chakra-ui/react";
+import { Box, Flex, Heading, IconButton, Text } from "@chakra-ui/react";
 import { BsGithub } from "react-icons/bs";
 import { WhiteBlock } from "./WhiteBlock";
-
 
 export const Project = () => {
   return (
@@ -15,12 +14,16 @@ export const Project = () => {
           justifyContent="center"
           alignItems="center"
         >
+          <Text mb="2" fontWeight="bold" textTransform="uppercase">
+            Pagebuilder app
+          </Text>
           <Heading
             as="a"
             href="https://app.brnensky-vyvojar.eu/"
             textAlign="center"
-            size="lg"
+            size="md"
             target="_blank"
+            mb="2"
           >
             https://app.brnensky-vyvojar.eu/
           </Heading>

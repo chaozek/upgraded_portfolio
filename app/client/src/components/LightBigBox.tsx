@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useDrag } from "react-dnd";
 import EditableField from "src/utils/editableField";
 
-
 export const LightBigBox = ({
   component,
   parentComponent,
@@ -12,7 +11,7 @@ export const LightBigBox = ({
   text,
 }) => {
   const [localComp, setLocalComp] = useState([]);
-  const [{ opacity }, dragRef] = useDrag(
+  /*   const [{ opacity }, dragRef] = useDrag(
     () => ({
       type: "INTRO",
       item: { text },
@@ -23,7 +22,7 @@ export const LightBigBox = ({
       },
     }),
     []
-  );
+  ); */
   useEffect(() => {
     if (!component) return;
     else setLocalComp(component);
@@ -34,7 +33,7 @@ export const LightBigBox = ({
   }
 
   return (
-    <SimpleGrid ref={dragRef} style={{ opacity }} my="5" spacing={10}>
+    <SimpleGrid /* ref={dragRef} style={{ opacity }} */ my="5" spacing={10}>
       <Box>
         <Card
           boxShadow="#16173B 0px 8px 24px"

@@ -15,7 +15,6 @@ import { componentsShape } from "src/createComponent/componentsNames";
 import { CreateComponent } from "src/createComponent/CreateComponent";
 import { addComponentToRender } from "src/views/helpers";
 
-
 interface LayoutProps {
   children: React.ReactNode;
   sideMenuOpened: boolean;
@@ -221,17 +220,17 @@ const Layout = ({
             <Button onClick={() => handleBothClicks()}>
               {isAdmin ? "FAKE LOGOUT" : "FAKE LOGIN"}
             </Button>
-
-            <IconButton
-              aria-label="Open menu"
-              isDisabled={!isAdmin}
-              icon={<FaRegEdit />}
-              onClick={() => setSideMenuOpened()}
-              color="red"
-              variant="ghost"
-              size="md"
+            <Button
+              rightIcon={<FaRegEdit />}
+              colorScheme="blue"
+              variant="outline"
               display={["none", "none", "none", "flex"]}
-            />
+              color="red"
+              isDisabled={!isAdmin}
+              onClick={() => setSideMenuOpened()}
+            >
+              Edit page
+            </Button>
           </Box>
         </Flex>
         <Box>{children}</Box>

@@ -14,7 +14,7 @@ const style = {
   cursor: "move",
   padding: "0px",
   border: "1px dashed transparent",
-  zIndex: 1,
+  userSelect: "none", // This will prevent text selection during dragging
 };
 
 export interface CardProps {
