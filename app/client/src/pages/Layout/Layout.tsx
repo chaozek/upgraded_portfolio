@@ -72,7 +72,7 @@ const Layout = ({
         <Box
           borderRight="1px"
           borderColor="black"
-          position="fixed"
+          position={sideMenuOpened ? "fixed" : "flex"}
           top="65px"
           right="0"
           height="100%"
@@ -90,7 +90,7 @@ const Layout = ({
               : "nic"}
           </Text>
         </Box>
-        <Box position="fixed" overflowY="auto" height="100%" mb="5">
+        <Box position={"fixed"} overflowY="auto" height="100%" mb="5">
           <Box
             gap="5"
             display="flex"
