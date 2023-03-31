@@ -90,115 +90,116 @@ const Layout = ({
               : "nic"}
           </Text>
         </Box>
-
-        <Box
-          gap="5"
-          display="flex"
-          flexDirection={{ md: "column" }}
-          justifyContent="center"
-          alignItems="center"
-          minWidth="300px"
-        >
-          <Collapsible trigger="ENABLE FEATURES">
-            <Box
-              gap="5"
-              display="flex"
-              flexDirection={{ md: "column" }}
-              justifyContent="center"
-              alignItems="center"
-              mt={5}
-              width="100%"
-            >
-              <Button
-                width="90%"
-                backgroundColor="#1F1F4B"
-                onClick={() => setImageEditable()}
+        <Box position="fixed" overflowY="auto" height="100%" mb="5">
+          <Box
+            gap="5"
+            display="flex"
+            flexDirection={{ md: "column" }}
+            justifyContent="start"
+            alignItems="center"
+            pb="100px"
+          >
+            <Collapsible trigger="ENABLE FEATURES">
+              <Box
+                gap="5"
+                display="flex"
+                flexDirection={{ md: "column" }}
+                justifyContent="center"
+                alignItems="center"
+                mt={5}
+                width="100%"
               >
-                {isImageEditable ? "Disable" : "Enable"} image edit
-              </Button>
-              <Button
-                width="90%"
-                backgroundColor="#1F1F4B"
-                onClick={() => setIsDraggable()}
-              >
-                {isDraggable ? "Disable dragging" : "Enable dragging"}
-              </Button>
-              <Button
-                onClick={() => setTextEditable()}
-                backgroundColor="#1F1F4B"
-                width="90%"
-              >
-                {!isTextEditable ? "Enable" : "Disable"} text editor
-              </Button>
-            </Box>
-          </Collapsible>
-          <Collapsible trigger="CREATE COMPONENTS">
-            {componentsShape.map((comp, i) => {
-              return (
-                <Box
-                  gap="5"
-                  display="flex"
-                  flexDirection={{ md: "column" }}
-                  justifyContent="center"
-                  alignItems="center"
-                  mt={5}
+                <Button
+                  width="90%"
+                  backgroundColor="#1F1F4B"
+                  onClick={() => setImageEditable()}
                 >
-                  <Button
-                    key={i}
-                    backgroundColor="#1F1F4B"
-                    width="90%"
-                    onClick={() =>
-                      addComponentToRender(
-                        addComponentToRenderMutation,
-                        componentsToRender,
-                        comp.value
-                      )
-                    }
+                  {isImageEditable ? "Disable" : "Enable"} image edit
+                </Button>
+                <Button
+                  width="90%"
+                  backgroundColor="#1F1F4B"
+                  onClick={() => setIsDraggable()}
+                >
+                  {isDraggable ? "Disable dragging" : "Enable dragging"}
+                </Button>
+                <Button
+                  onClick={() => setTextEditable()}
+                  backgroundColor="#1F1F4B"
+                  width="90%"
+                >
+                  {!isTextEditable ? "Enable" : "Disable"} text editor
+                </Button>
+              </Box>
+            </Collapsible>
+            <Collapsible trigger="CREATE COMPONENTS">
+              {componentsShape.map((comp, i) => {
+                return (
+                  <Box
+                    gap="5"
+                    display="flex"
+                    flexDirection={{ md: "column" }}
+                    justifyContent="center"
+                    alignItems="center"
+                    mt={5}
                   >
-                    CREATE {comp.value}
-                  </Button>
-                </Box>
-              );
-            })}
-          </Collapsible>
-          <Collapsible trigger="SHOW / HIDE COMPONENTS">
-            <Box
-              gap="5"
-              display="flex"
-              flexDirection={{ md: "column" }}
-              justifyContent="center"
-              alignItems="center"
-              mt={5}
-            >
-              {components &&
-                components.map((component, i) => {
-                  return (
-                    <GridItem w="100%">
-                      <Link smooth={true} to={component.componentName}>
-                        <CreateComponent
-                          key={i}
-                          componentName={component.componentName}
-                          componentToRenderStatic={component.componentName}
-                          componentInfo={data}
-                        />
-                      </Link>
-                    </GridItem>
-                  );
-                })}
-            </Box>
-          </Collapsible>
-          <Collapsible trigger={`TUTORIAL GUIDE (wip)`}>
-            <Box
-              gap="5"
-              display="flex"
-              flexDirection={{ md: "column" }}
-              justifyContent="center"
-              alignItems="center"
-              mt={5}
-            >
-              <IntroJs />
-            </Box>
-          </Collapsible>
+                    <Button
+                      key={i}
+                      backgroundColor="#1F1F4B"
+                      width="90%"
+                      onClick={() =>
+                        addComponentToRender(
+                          addComponentToRenderMutation,
+                          componentsToRender,
+                          comp.value
+                        )
+                      }
+                    >
+                      CREATE {comp.value}
+                    </Button>
+                  </Box>
+                );
+              })}
+            </Collapsible>
+            <Collapsible trigger="SHOW / HIDE COMPONENTS">
+              <Box
+                gap="5"
+                display="flex"
+                flexDirection={{ md: "column" }}
+                justifyContent="center"
+                alignItems="center"
+                mt={5}
+              >
+                {components &&
+                  components.map((component, i) => {
+                    return (
+                      <GridItem w="100%">
+                        <Link smooth={true} to={component.componentName}>
+                          <CreateComponent
+                            key={i}
+                            componentName={component.componentName}
+                            componentToRenderStatic={component.componentName}
+                            componentInfo={data}
+                          />
+                        </Link>
+                      </GridItem>
+                    );
+                  })}
+              </Box>
+            </Collapsible>
+            <Collapsible trigger={`TUTORIAL GUIDE (wip)`}>
+              <Box
+                gap="5"
+                display="flex"
+                flexDirection={{ md: "column" }}
+                justifyContent="center"
+                alignItems="center"
+                mt={5}
+              >
+                <IntroJs />
+              </Box>
+            </Collapsible>
+          </Box>
         </Box>
       </Box>
       <Box flex="1" width={{ xl: "300px" }} transition="margin-left 0.3s ease">
