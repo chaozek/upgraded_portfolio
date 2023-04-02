@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-
 import { Box } from "@chakra-ui/react";
 import { Card } from "@chakra-ui/react";
-import EditableField from "src/utils/editableField";
 import { SimpleGrid } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { useDrag } from "react-dnd";
+import EditableField from "src/utils/editableField";
+
 
 export const Intro = ({
   component,
@@ -15,18 +15,7 @@ export const Intro = ({
   text,
 }) => {
   const [localComp, setLocalComp] = useState([]);
-  /*   const [{ opacity }, dragRef] = useDrag(
-    () => ({
-      type: "INTRO",
-      item: { text },
-      collect: (monitor) => {
-        return {
-          opacity: monitor.isDragging() ? 0.9 : 1,
-        };
-      },
-    }),
-    []
-  ); */
+
   useEffect(() => {
     if (!component) return;
     else setLocalComp(component);
@@ -37,13 +26,7 @@ export const Intro = ({
   }
 
   return (
-    <SimpleGrid
-      /*      ref={dragRef}
-      style={{ opacity }} */
-      my="8"
-      columns={[1, 2, 2, 2]}
-      spacing={10}
-    >
+    <SimpleGrid my="8" columns={[1, 2, 2, 2]} spacing={10}>
       <Box>
         <Card
           boxShadow="#16173B 0px 8px 24px"
