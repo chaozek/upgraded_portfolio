@@ -1,7 +1,9 @@
 import { Text } from "@chakra-ui/react";
-import { WhiteBlock } from "./WhiteBlock";
+import { personalSkills, profiSkills } from "../helpers/skills";
 import { ItemList } from "./ItemList";
-import { profiSkills, personalSkills } from "../helpers/skills";
+import { WhiteBlock } from "./WhiteBlock";
+
+
 export const Skills = () => (
   <div id="skills">
     <WhiteBlock description="CHECK OUT MY" header="Skills">
@@ -24,7 +26,7 @@ export const Skills = () => (
           fontSize="1xl"
           my="5"
         >
-          Working with in personal projects (FE & BE) TESTTESTTEST
+          Working with in personal projects (FE & BE)
         </Text>
         <ItemList items={personalSkills} />
       </>
